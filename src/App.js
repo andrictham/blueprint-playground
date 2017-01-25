@@ -28,14 +28,14 @@ class App extends Component {
   }
   render() {
     return (
-      <div className="App">
+      <div className="App pt-dark">
         <NavBar />
         <div className="App-header">
           <Blueprint.Button iconName="add" text="Add Row" intent={Blueprint.Intent.PRIMARY} onClick={this.addRow.bind(this)} />
           <Blueprint.Button iconName="remove" text="Clear Rows" intent={Blueprint.Intent.DANGER} onClick={this.clearRows.bind(this)} />
         </div>
         <p className="App-intro">
-          <Table numRows={this.state.tableRows}>
+          <Table numRows={this.state.tableRows} fillBodyWithGhostCells={true}>
               <Column />
               <Column />
               <Column />
