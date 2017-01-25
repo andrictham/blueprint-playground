@@ -31,8 +31,8 @@ class App extends Component {
       <div className="App">
         <NavBar />
         <div className="App-header">
-          <Blueprint.Button iconName="add" text="Add Row" onClick={this.addRow.bind(this)} />
-          <Blueprint.Button iconName="remove" text="Clear Rows" onClick={this.clearRows.bind(this)} />
+          <Blueprint.Button iconName="add" text="Add Row" intent={Blueprint.Intent.PRIMARY} onClick={this.addRow.bind(this)} />
+          <Blueprint.Button iconName="remove" text="Clear Rows" intent={Blueprint.Intent.DANGER} onClick={this.clearRows.bind(this)} />
         </div>
         <p className="App-intro">
           <Table numRows={this.state.tableRows}>
