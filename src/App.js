@@ -35,7 +35,7 @@ class App extends Component {
           <Blueprint.Button iconName="remove" text="Clear Rows" intent={Blueprint.Intent.DANGER} onClick={this.clearRows.bind(this)} />
         </div>
         <p className="App-intro">
-          <Table numRows={this.state.tableRows} fillBodyWithGhostCells={true}>
+          <Table numRows={this.state.tableRows}>
               <Column />
               <Column />
               <Column />
