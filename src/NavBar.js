@@ -3,7 +3,6 @@ import logo from './logo.svg';
 import './App.css';
 
 import * as Blueprint from "@blueprintjs/core";
-import { Table, Column } from "@blueprintjs/table";
 
 class NavBar extends Component {
   render() {
