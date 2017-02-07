@@ -12,7 +12,8 @@ class App extends Component {
     super (props);
 
     this.state = {
-      tableRows: 2
+      tableRows: 2,
+      slidervalue: 1
     }
   }
   addRow () {
@@ -26,10 +27,27 @@ class App extends Component {
       tableRows: 0
     });
   }
+  getChangeHandler(key){
+    return (value) => this.setState ({[key]: value});
+  }
+  renderLabel(val){
+    return val === 0 ? `$${val}` : `$${val},000`;
+  }
   render() {
     return (
-      <div className="App pt-dark">
+      <div className="App">
         <NavBar />
+        <div className="App-header slider">
+          <Blueprint.Slider
+                    min={1}
+                    max={100}
+                    stepSize={1}
+                    labelStepSize={99}
+                    onChange={this.getChangeHandler("slidervalue")}
+                    renderLabel={this.renderLabel}
+                    value={this.state.slidervalue}
+                />
+        </div>
         <div className="App-header">
           <Blueprint.Button iconName="add" text="Add Row" intent={Blueprint.Intent.PRIMARY} onClick={this.addRow.bind(this)} />
           <Blueprint.Button iconName="remove" text="Clear Rows" intent={Blueprint.Intent.DANGER} onClick={this.clearRows.bind(this)} />
